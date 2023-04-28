@@ -19,6 +19,9 @@ app.use(cors());
 const userRouter = require('./app/routers/userRouter');
 app.use('/auth', userRouter);
 
+const postRouter = require('./app/routers/postRouter');
+app.use('/post',postRouter);
+
 
 
 app.use(errHandler);
