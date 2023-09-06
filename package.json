@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "swagger-autogen": "node ./utils/swagger.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,7 +19,12 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
     "node-input-validator": "^4.5.1",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.5"
   }
 }

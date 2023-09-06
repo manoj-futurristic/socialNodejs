@@ -169,12 +169,25 @@ exports.updateUser = async (req, res) => {
 };
 
 exports.deleteUser = async (req, res) => {
+   
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
-        return res.status(StatusCodes.OK).json(user);
+        const user = await User.findByIdAndDelete(req.query.id);
+        if(!user){
+            throw new Error('User not found'); 
+        }
+        sendResponse(
+            res,
+            StatusCodes.OK,
+            "User",
+            user
+        );    
 
     } catch (error) {
-        return res.status(StatusCodes.BAD_REQUEST).json(error);
+        sendError(
+            res,
+            StatusCodes.BAD_REQUEST,
+            error.message,
+        );
     }
 };
 
